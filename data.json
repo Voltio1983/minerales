@@ -1,0 +1,26 @@
+{
+    "coleccion_minerales": {
+        "titulo": "Colección Miguel Gálvez Ruiz",
+        "fecha_exportacion": "2025-09-06 11:57:05",
+        "total_minerales": 1,
+        "minerales": [
+            {
+                "id": 1,
+                "nombre": "Pirita",
+                "descripcion": "Varios cubos sobre matriz de arcilla gris.",
+                "categoria": "Metales",
+                "ubicacion": "Navajum (La Rioja) ESPAÑA",
+                "fecha_hallazgo": "2018/05/12",
+                "peso_gramos": 560.0,
+                "dureza": 5.0,
+                "color": "Amarillo",
+                "brillo": "Metálico",
+                "transparencia": "Opaco",
+                "sistema_cristalino": "Cúbico",
+                "imagenes": [
+                    "mineral_images\\20250831_193242_pirita-navajun.jpg"
+                ]
+            }
+        ]
+    }
+}

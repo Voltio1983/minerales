@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colección de Minerales</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Mi Colección de Minerales</h1>
+        <div class="admin-link">
+            <a href="admin.html" class="admin-btn">🔐 Panel de Administración</a>
+        </div>
+        <nav class="tabs">
+            <button class="tab-button active" onclick="showTab('collection')">Colección</button>
+            <button class="tab-button" onclick="showTab('gallery')">Galería</button>
+            <button class="tab-button" onclick="showTab('about')">Acerca de</button>
+        </nav>
+        <div class="search-container" id="searchContainer">
+            <input type="text" id="searchInput" placeholder="Buscar en toda la colección...">
+            <button onclick="clearSearch()">Limpiar</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Pestaña de Colección -->
+        <div id="collection-tab" class="tab-content active">
+            <div id="mineral-list" class="grid">
+                <!-- Los minerales se insertarán aquí -->
+            </div>
+        </div>
+
+        <!-- Pestaña de Galería -->
+        <div id="gallery-tab" class="tab-content">
+            <div id="gallery-container" class="gallery-grid">
+                <!-- Las imágenes se insertarán aquí -->
+            </div>
+        </div>
+
+        <!-- Pestaña de Acerca de -->
+        <div id="about-tab" class="tab-content">
+            <div class="about-container">
+                <div class="about-section">
+                    <h2>🎯 Descripción de la Colección</h2>
+                    <p>Esta colección personal de minerales representa años de pasión por la mineralogía y la geología. Cada muestra ha sido cuidadosamente seleccionada y catalogada con información detallada sobre sus propiedades físicas, químicas y origen.</p>
+                    <p>La colección incluye minerales de diferentes tipos: silicatos, sulfuros, óxidos, carbonatos y muchos más. Cada pieza cuenta con su historia única y características especiales que la hacen valiosa tanto para la investigación como para la apreciación estética.</p>
+                    <p>El objetivo de esta colección es preservar y compartir el conocimiento sobre la diversidad mineralógica de nuestro planeta, así como inspirar a otros apasionados por las ciencias de la tierra.</p>
+                </div>
+
+                <div class="about-section">
+                    <h2>📞 Datos de Contacto</h2>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <h3>📧 Email</h3>
+                            <p>coleccion.minerales@ejemplo.com</p>
+                        </div>
+                        <div class="contact-item">
+                            <h3>📱 Teléfono</h3>
+                            <p>+34 123 456 789</p>
+                        </div>
+                        <div class="contact-item">
+                            <h3>📍 Dirección</h3>
+                            <p>Calle de los Minerales, 123<br>28000 Madrid, España</p>
+                        </div>
+                        <div class="contact-item">
+                            <h3>🌐 Redes Sociales</h3>
+                            <p>@ColeccionMinerales</p>
+                        </div>
+                        <div class="contact-item">
+                            <h3>🕒 Horario de Consulta</h3>
+                            <p>Lunes a Viernes: 10:00 - 18:00<br>Sábados: 10:00 - 14:00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-section">
+                    <h2>📋 Información Adicional</h2>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <h3>📊 Estadísticas de la Colección</h3>
+                            <ul>
+                                <li>Total de muestras: <span id="totalSamples">0</span></li>
+                                <li>Países representados: 15</li>
+                                <li>Minerales catalogados: <span id="cataloguedMinerals">0</span></li>
+                                <li>Años de colección: 8</li>
+                            </ul>
+                        </div>
+                        <div class="info-item">
+                            <h3>🎓 Colaboraciones</h3>
+                            <p>Universidad Complutense de Madrid<br>Museo de Ciencias Naturales<br>Sociedad Española de Mineralogía</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal para mostrar imágenes a tamaño completo -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-content-container">
+            <img class="modal-content" id="modalImage">
+            <div class="modal-navigation">
+                <button class="nav-btn prev-btn" onclick="changeImage(-1)">❮</button>
+                <span id="imageCounter"></span>
+                <button class="nav-btn next-btn" onclick="changeImage(1)">❯</button>
+            </div>
+            <div id="modalCaption"></div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Colección de Minerales. Todos los derechos reservados.</p>
+            <p>Desarrollado con pasión por los minerales | Última actualización: <span id="lastUpdate"></span></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

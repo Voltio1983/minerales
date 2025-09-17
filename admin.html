@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración - Colección de Minerales</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <!-- Pantalla de Login -->
+    <div id="loginScreen" class="login-screen">
+        <div class="login-container">
+            <h2>🔐 Acceso Administrador</h2>
+            <form id="loginForm" onsubmit="login(event)">
+                <div class="form-group">
+                    <label for="username">Usuario:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="submit-btn">Iniciar Sesión</button>
+                <div id="loginMessage" class="login-message"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Panel de Administración -->
+    <div id="adminPanel" class="admin-panel" style="display: none;">
+        <header class="admin-header">
+            <h1>Panel de Administración</h1>
+            <div class="admin-actions">
+                <button onclick="logout()" class="logout-btn">Cerrar Sesión</button>
+                <button onclick="saveData()" class="save-btn">💾 Guardar Cambios</button>
+            </div>
+        </header>
+
+        <main class="admin-main">
+            <div class="admin-controls">
+                <button onclick="addNewMineral()" class="add-btn">➕ Agregar Nuevo Mineral</button>
+                <button onclick="exportData()" class="export-btn">📤 Exportar Datos</button>
+                <button onclick="importData()" class="import-btn">📥 Importar Datos</button>
+            </div>
+
+            <div id="mineralsList" class="minerals-list">
+                <!-- Los minerales se mostrarán aquí para edición -->
+            </div>
+        </main>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
